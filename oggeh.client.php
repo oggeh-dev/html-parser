@@ -20,7 +20,7 @@
 	 * 
 	 * You should have received a copy of the License
 	 * along with OGGEH HTML Parser. If not, see
-	 * <https://github.com/oggehllc/oggeh-html-parser/LICENSE.txt>.
+	 * <https://github.com/oggeh-dev/oggeh-html-parser/LICENSE.txt>.
 	 * 
 	 * See LICENSE.txt file for more information.
 	 * -------------------------------------------------------------------
