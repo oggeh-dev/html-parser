@@ -1,0 +1,20 @@
+                            <section>
+                              <header class="main">
+                                <h1>{$param2}</h1>
+                              </header>
+                              <hr class="major" />
+                              <div class="row">
+                                <!-- begin of :: album items for album label matches url $param2 -->
+                                <oggeh method="get.album" label="{$param2}" select="caption,url" iterate="items">
+                                  <!-- NOTE: always use unique block snippet parent tag (do not reuse in child tags) -->
+                                  <article class="4u 12u$(small)" oggeh-repeat>
+                                    <div class="video">
+                                      <iframe src="{$url}" allowfullscreen="allowfullscreen"></iframe>
+                                    </div>
+                                    <span>{$caption.title}</span>
+                                    <p>{$caption.description}</p>
+                                  </article>
+                                </oggeh>
+                                <!-- end of :: album items for album label matches url $param2 -->
+                              </div>
+                            </section>

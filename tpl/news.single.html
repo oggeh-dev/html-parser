@@ -1,0 +1,159 @@
+                            <section>
+                              <header class="main">
+                                <h1>
+                                  <!-- begin of :: news subject for news start date matches url $param1 -->
+                                  <oggeh method="get.news" start-date="{$param1}" limit="1" select="subject" />
+                                  <!-- end of :: news subject for news start date matches url $param1 -->
+                                </h1>
+                                <blockquote>
+                                  <!-- begin of :: news post date for news start date matches url $param1 -->
+                                  <oggeh method="get.news" start-date="{$param1}" limit="1" select="date" date-format="D j M, Y" />
+                                  <!-- end of :: news post date for news start date matches url $param1 -->
+                                </blockquote>
+                              </header>
+                              <hr class="major" />
+                              <div class="row">
+                                <div class="cover 12u">
+                                  <!-- begin of :: news cover for news start date matches url $param1 -->
+                                  <oggeh method="get.news" start-date="{$param1}" limit="1" select="cover">
+                                    <span class="image main" data-alt="{$original.url}"><img src="{$original.url}" alt="" /></span>
+                                  </oggeh>
+                                  <!-- end of :: news cover for news start date matches url $param1 -->
+                                  <div class="summary">
+                                    <p>
+                                      <!-- begin of :: news header for news start date matches url $param1 -->
+                                      <oggeh method="get.news" start-date="{$param1}" limit="1" select="header" />
+                                      <!-- end of :: news header for news start date matches url $param1 -->
+                                    </p>
+                                  </div>
+                                </div>
+                                <!-- begin of :: all news blocks for news start date matches url $param1 -->
+                                <oggeh method="get.news" start-date="{$param1}" limit="1" select="blocks">
+                                  <!-- NOTE: always use unique block snippet parent tag (do not reuse in child tags) -->
+                                  <article class="{$size_x}u 12u$(small)" type="rte" oggeh-snippet>
+                                    <p oggeh-repeat>
+                                      {$html}
+                                    </p>
+                                  </article>
+                                  <article class="{$size_x}u 12u$(small)" type="media" filter="photo" oggeh-snippet>
+                                    <div class="box alt">
+                                      <div class="row 50% uniform">
+                                        <!-- NOTE: always use unique block repeat parent tag (do not reuse in child tags) -->
+                                        <div class="4u 12u$(small)" oggeh-repeat>
+                                          <span class="image fit">
+                                            <a href="{$regular.url}" data-title="{$caption.title}" data-lightbox="consistent">
+                                              <img src="{$thumbnail.url}" alt="{$caption.title}" />
+                                            </a>
+                                            <span>{$caption.title}</span>
+                                            <p>{$caption.description}</p>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </article>
+                                  <article class="{$size_x}u 12u$(small)" type="media" filter="audio" oggeh-snippet>
+                                    <div class="box alt">
+                                      <div class="row 50% uniform">
+                                        <!-- NOTE: always use unique block repeat parent tag (do not reuse in child tags) -->
+                                        <div class="12u" oggeh-repeat>
+                                          <span class="audio image fit">
+                                            <img src="{$regular.url}" alt="{$caption.title}" />
+                                            <audio controls>
+                                              <source src="{$url}" type="audio/mpeg">
+                                            </audio>
+                                            <span>{$caption.title}</span>
+                                            <p>{$caption.description}</p>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </article>
+                                  <article class="{$size_x}u 12u$(small)" type="media" filter="video" oggeh-snippet>
+                                    <div class="box alt">
+                                      <div class="row 50% uniform">
+                                        <!-- NOTE: always use unique block repeat parent tag (do not reuse in child tags) -->
+                                        <div class="12u" oggeh-repeat>
+                                          <span class="video image fit">
+                                            <img src="{$regular.url}" alt="{$caption.title}" />
+                                            <iframe src="{$url}?autoplay=1" allowfullscreen="allowfullscreen"></iframe>
+                                            <span>{$caption.title}</span>
+                                            <p>{$caption.description}</p>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </article>
+                                  <article class="{$size_x}u 12u$(small)" type="files" oggeh-snippet>
+                                    <ul class="alt">
+                                      <!-- NOTE: always use unique block repeat parent tag (do not reuse in child tags) -->
+                                      <li oggeh-repeat>
+                                        <a href="{$url}">{$caption.title}</a>
+                                        <p>{$caption.description}</p>
+                                      </li>
+                                    </ul>
+                                  </article>
+                                  <article class="{$size_x}u 12u$(small)" type="table" oggeh-snippet>
+                                    <div class="table-wrapper">
+                                      <table>
+                                        {$table}
+                                      </table>
+                                    </div>
+                                  </article>
+                                </oggeh>
+                                <!-- end of :: all news blocks for news start date matches url $param1 -->
+                              </div>
+                              <div class="row uniform">
+                                <!-- begin of :: only news form block for news start date matches url $param1 -->
+                                <oggeh method="get.news" start-date="{$param1}" limit="1" select="blocks" block-type="form" iterate="form">
+                                  <form method="post" action="{$endpoint}/?api_key={$api_key}&lang={$lang}" data-success="{$oggeh-phrase|form-success}" data-error="{$oggeh-phrase|form-error}" enctype="multipart/form-data">
+                                    <!-- NOTE: always use unique field parent tag (do not reuse in child tags) -->
+                                    <article class="12u" type="text" subtype="text" inject="validate-required|required" oggeh-field>
+                                      <label for="{$name}">{$label}</label>
+                                      {$control}
+                                    </article>
+                                    <article class="12u$" type="select" inject="validate-required|required" oggeh-field>
+                                      <label for="{$name}">{$label}</label>
+                                      <div class="select-wrapper">
+                                        {$control}
+                                      </div>
+                                    </article>
+                                    <article class="4u 12u$(small)" type="radio-group" inject="validate-required|required" oggeh-field>
+                                      {$control}
+                                      <label for="{$name}">{$label}</label>
+                                    </article>
+                                    <article class="4u 12u$(small)" type="checkbox" inject="validate-required|required" oggeh-field>
+                                      {$control}
+                                      <!-- NOTE: conditional inline tag class inject (not applying to control) -->
+                                      <label for="{$name}" inject="input-checkbox--switch|toggle">{$label}</label>
+                                    </article>
+                                    <article class="4u 12u$(small)" type="checkbox-group" inject="validate-required|required" oggeh-field>
+                                      {$control}
+                                      <label for="{$name}">{$label}</label>
+                                    </article>
+                                    <!-- TODO: shall we separate normal control class inject from conditional control class inject? -->
+                                    <article class="12u" type="date" inject="datepicker" oggeh-field>
+                                      <label for="{$name}">{$label}</label>
+                                      {$control}
+                                    </article>
+                                    <article class="12u" type="file" oggeh-field>
+                                      {$control}
+                                      <label for="{$name}">{$label}</label>
+                                    </article>
+                                    <article class="12u" inject="validate-required|required" oggeh-field>
+                                      <label for="{$name}">{$label}</label>
+                                      {$control}
+                                    </article>
+                                    <article class="12u" oggeh-static>
+                                      <ul class="actions">
+                                        <li><input type="submit" value="{$oggeh-phrase|submit}" class="special" /></li>
+                                        <li><input type="reset" value="{$oggeh-phrase|reset}" /></li>
+                                      </ul>
+                                    </article>
+                                  </form>
+                                </oggeh>
+                                <!-- end of :: only news form block for news start date matches url $param1 -->
+                              </div>
+                            </section>
+                        </div>
+                    </div>
+            </section>

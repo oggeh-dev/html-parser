@@ -1,0 +1,7 @@
+vendor/
+node_modules/
+app.bundle.js
+npm-debug.log
+composer.lock
+error.log
+.DS_Store

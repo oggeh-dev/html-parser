@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="{$lang}" dir="{$dir}">
+    <head>
+        <meta charset="utf-8">
+    <title>
+      <!-- begin of :: app title -->
+      <oggeh method="get.app" select="title" />
+      <!-- end of :: app title -->
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- begin of :: app meta -->
+    <oggeh method="get.app" select="meta.keywords" />
+    <oggeh method="get.app" select="meta.description" />
+    <!-- end of :: end meta -->
+    <link rel="stylesheet" href="/assets/css/flag-icon.min.css?v=0.0" />
+    <link rel="stylesheet" href="/assets/css/kctoggle.css?v=0.6" />
+    <link rel="stylesheet" href="/assets/css/lightbox.css?v=0.8" />
+    <link rel="stylesheet" href="/assets/css/datepicker.css?v=0.3" />
+    <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/assets/css/main.css?v=6.8" />
+    <link rel="stylesheet" href="/assets/css/lang.{$lang}.css?v=0.9" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+    <!--[if lt IE 9]> <script src="/assets/js/html5shiv.js"></script> <![endif]-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51217307-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-51217307-7');
+    </script>
+    </head>
+    <body>
+        <!-- Wrapper -->
+        <div id="wrapper">
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+
+                    <!-- Header -->
+                        <header id="header">
+                            <a href="/{$lang}" class="logo">
+                                <!-- begin of :: app title -->
+                                <oggeh method="get.app" select="title" />
+                                <!-- end of :: app title -->
+                            </a>
+                            <!-- begin of :: app social links -->
+                            <oggeh method="get.app" select="social">
+                                <ul class="icons">
+                                    <li oggeh-repeat><a href="{$social.value}" class="icon fa-{$social.key}"><span class="label">{$social.key}</span></a></li>
+                                </ul>
+                            </oggeh>
+                            <!-- end of :: app social links -->
+                        </header>
+                        <section>
+                            <header class="main">
+                                <h1>{$oggeh-phrase|under-maintenance}</h1>
+                                <blockquote>
+                                  <p>{$oggeh-phrase|under-maintenance-message}</p>
+                                </blockquote>
+                            </header>
+                        </section>
+                    <!-- Sidebar -->
+                    <div id="sidebar">
+                        <div class="inner">
+
+                            <!-- Section -->
+                                <section>
+                                    <!-- begin of :: app languages -->
+                                    <oggeh method="get.app" select="languages">
+                                        <p class="lang" oggeh-repeat>
+                                            <a href="{$oggeh-switch|$}">
+                                                <span class="flag-icon flag-icon-{$flag}"></span>
+                                            </a>
+                                        </p>
+                                    </oggeh>
+                                    <!-- end of :: app languages -->
+                                </section>
+
+                            <!-- Footer -->
+                                <footer id="footer">
+                                    <p class="copyright">&copy; <!-- begin of :: app title --><oggeh method="get.app" select="title" /><!-- end of :: app title -->. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Power: <a href="http://dev.oggeh.com" rel="designer">OGGEH Developers</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                                </footer>
+
+                        </div>
+                    </div>
+
+            </div>
+
+        <!-- Scripts -->
+        <script src="//maps.google.com/maps/api/js?key=AIzaSyAr3-o4zl1K5IeZsAKImlqtGx9rNTGcWDA" type="text/javascript"></script>
+        <script src="/assets/js/hmac-sha512.js"></script>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/lightbox.min.js"></script>
+        <script src="/assets/js/kctoggle.js"></script>
+        <script src="/assets/js/datepicker.min.js"></script>
+        <script src="/assets/js/skel.min.js"></script>
+        <script src="/assets/js/util.js?v=0.1"></script>
+        <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="/assets/js/main.js?v=3.0"></script>
+
+    </body>
+</html>

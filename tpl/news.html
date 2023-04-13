@@ -1,0 +1,19 @@
+                            <section>
+                              <header class="main">
+                                <h1>{$oggeh-phrase|all-news}</h1>
+                              </header>
+                              <div class="row">
+                                <!-- begin of :: all news subject and header -->
+                                <oggeh method="get.news" select="subject,header" date-format="D j M, Y">
+                                    <article class="6u 12u$(small)" oggeh-repeat>
+                                        <h3>
+                                            <a href="/{$lang}/news/{$timestamp}">{$subject}</a>
+                                        </h3>
+                                        <blockquote>{$date}</blockquote>
+                                        <p>{$header}</p>
+                                        <a href="/{$lang}/news/{$timestamp}" class="button">{$oggeh-phrase|continue-reading} &raquo;</a>
+                                    </article>
+                                </oggeh>
+                                <!-- end of :: all news subject and header -->
+                            </div>
+                          </section>

@@ -1,0 +1,64 @@
+                            <section>
+                                <header class="main">
+                                    <h1>{$oggeh-phrase|contact-us}</h1>
+                                </header>
+                                <!-- begin of :: contact locations -->
+                                <oggeh method="get.locations" select="address,latitude,longitude">
+                                    <div class="map-container">
+                                        <div class="location" oggeh-repeat>
+                                            <p data-latitude="{$latitude}" data-longitude="{$longitude}" data-address="{$address}"></p>
+                                        </div>
+                                    </div>
+                                </oggeh>
+                                <!-- end of :: contact locations -->
+                                <div class="row">
+                                    <div class="6u 12u$(small)">
+                                        <ul class="alt">
+                                            <!-- begin of :: contact addresses -->
+                                            <oggeh method="get.locations" select="address">
+                                                <li oggeh-repeat>{$address}</li>
+                                            </oggeh>
+                                            <!-- end of :: contact addresses -->
+                                        </ul>
+                                    </div>
+                                    <div class="6u 12u$(small)">
+                                        <div class="row uniform">
+                                            <form method="post" action="{$endpoint}/?api_key={$api_key}&lang={$lang}" class="form-email" data-success="{$oggeh-phrase|form-success}" data-error="{$oggeh-phrase|form-error}">
+                                                <input type="hidden" name="method" value="post.contact.form">
+                                                <input type="hidden" name="key" value="contact">
+                                                <!-- begin of :: contact form token -->
+                                                <oggeh method="get.form.token" key="contact">
+                                                    <input type="hidden" name="token" value="{$value}">
+                                                </oggeh>
+                                                <!-- end of :: contact form token -->
+                                                <div class="12u">
+                                                    <!-- begin of :: contact form email list -->
+                                                    <oggeh method="get.contacts" select="name,email">
+                                                        <div class="select-wrapper">
+                                                          <select name="to">
+                                                            <option value="{$email}" oggeh-repeat>{$name}</option>
+                                                          </select>
+                                                        </div>
+                                                    </oggeh>
+                                                    <!-- end of :: contact form email list -->
+                                                </div>
+                                                <div class="12u">
+                                                    <label>{$oggeh-phrase|your-name}:</label>
+                                                    <input type="text" name="name" class="validate-required">
+                                                </div>
+                                                <div class="12u">
+                                                    <label>{$oggeh-phrase|email-address}:</label>
+                                                    <input type="email" name="email" class="validate-required validate-email">
+                                                </div>
+                                                <div class="12u">
+                                                    <label>{$oggeh-phrase|message}:</label>
+                                                    <textarea rows="3" name="message" class="validate-required"></textarea>
+                                                </div>
+                                                <div class="12u">
+                                                    <input type="submit" value="{$oggeh-phrase|send-inquiry}" class="special" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>

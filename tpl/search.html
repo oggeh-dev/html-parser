@@ -1,0 +1,24 @@
+                            <section>
+                                <header class="main">
+                                    <h1>{$oggeh-phrase|showing-results-for} &ldquo;{$param1}&rdquo;</h1>
+                                </header>
+                                <div class="row">
+                                    <!-- begin of :: search results -->
+                                    <oggeh method="get.search.results" keyword="{$param1}">
+                                        <article class="6u" target="pages" oggeh-search>
+                                            <i>{$oggeh-phrase|page}</i>
+                                            <h2><a href="/{$lang}/page/{$key}">{$subject}</a></h2>
+                                            <p>{$header}</p>
+                                        </article>
+                                        <article class="6u" target="news" oggeh-search>
+                                            <i>{$oggeh-phrase|news}</i>
+                                            <h2><a href="/{$lang}/news/{$timestamp}">{$subject}</a></h2>
+                                            <p>{$header}</p>
+                                        </article>
+                                        <article class="6u" target="none" oggeh-search>
+                                            <blockquote><i>{$oggeh-phrase|search-not-found}</i></blockquote>
+                                        </article>
+                                    </oggeh>
+                                    <!-- begin of :: search results -->
+                                </div>
+                            </section>

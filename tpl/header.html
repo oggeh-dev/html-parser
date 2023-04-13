@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Modified by OGGEH Cloud Computing
+    dev.oggeh.com
+-->
+<html lang="{$lang}" dir="{$dir}">
+    <head>
+        <meta charset="utf-8">
+    <title>
+      <!-- begin of :: app title -->
+      <oggeh method="get.app" select="title" />
+      <!-- end of :: app title -->
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- begin of :: app meta -->
+    <oggeh method="get.app" select="meta.keywords" />
+    <oggeh method="get.app" select="meta.description" />
+    <!-- end of :: end meta -->
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css?v=0.0" />
+    <link rel="stylesheet" href="assets/css/kctoggle.css?v=0.6" />
+    <link rel="stylesheet" href="assets/css/lightbox.css?v=0.8" />
+    <link rel="stylesheet" href="assets/css/datepicker.css?v=0.3" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css?v=7.6" />
+    <link rel="stylesheet" href="assets/css/lang.{$lang}.css?v=0.9" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-51217307-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-51217307-7');
+    </script>
+    </head>
+    <body>
+        <!-- Wrapper -->
+        <div id="wrapper">
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+
+                    <!-- Header -->
+                        <header id="header">
+                            <a href="/{$lang}" class="logo">
+                                <!-- begin of :: app title -->
+                                <oggeh method="get.app" select="title" />
+                                <!-- end of :: app title -->
+                            </a>
+                            <!-- begin of :: app social links -->
+                            <oggeh method="get.app" select="social">
+                                <ul class="icons">
+                                    <li oggeh-repeat><a href="{$social.value}" class="icon fa-{$social.key}"><span class="label">{$social.key}</span></a></li>
+                                </ul>
+                            </oggeh>
+                            <!-- end of :: app social links -->
+                        </header>

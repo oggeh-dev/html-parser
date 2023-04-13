@@ -1,0 +1,57 @@
+[{
+"defs": 1,
+"dftLang": false,
+"file": "ar_EG.xml",
+"lang": "ar-EG",
+"langType": "ar",
+"revGenDate": null,
+"territory": "EG"
+},{
+"defs": 0,
+"dftLang": false,
+"file": "en_US.xml",
+"lang": "en-US",
+"langType": "en",
+"revGenDate": null,
+"territory": "US"
+},{
+"defs": 0,
+"dftLang": false,
+"file": "de_DE.xml",
+"lang": "de-DE",
+"langType": "de",
+"revGenDate": null,
+"territory": "DE"
+},{
+"defs": 0,
+"dftLang": false,
+"file": "ru_RU.xml",
+"lang": "ru-RU",
+"langType": "ru",
+"revGenDate": null,
+"territory": "RU"
+},{
+"defs": 0,
+"dftLang": false,
+"file": "it_IT.xml",
+"lang": "it-IT",
+"langType": "it",
+"revGenDate": null,
+"territory": "IT"
+},{
+"defs": 0,
+"dftLang": false,
+"file": "fr_FR.xml",
+"lang": "fr-FR",
+"langType": "fr",
+"revGenDate": null,
+"territory": "FR"
+},{
+"defs": 0,
+"dftLang": false,
+"file": "fa_IR.xml",
+"lang": "fa-IR",
+"langType": "fa",
+"revGenDate": null,
+"territory": "IR"
+}]

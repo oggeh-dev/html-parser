@@ -1,0 +1,22 @@
+                            <section>
+                              <header class="main">
+                                <h1>{$param2}</h1>
+                              </header>
+                              <hr class="major" />
+                              <div class="row">
+                                <!-- begin of :: album items for album label matches url $param2 -->
+                                <oggeh method="get.album" label="{$param2}" select="caption,thumbnail,regular" iterate="items">
+                                  <!-- NOTE: always use unique block snippet parent tag (do not reuse in child tags) -->
+                                  <div class="3u 12u$(small)" oggeh-repeat>
+                                    <span class="image fit">
+                                      <a href="{$regular.url}" data-title="{$caption.title}" data-lightbox="consistent">
+                                        <img src="{$thumbnail.url}" alt="{$caption.title}" />
+                                      </a>
+                                      <span>{$caption.title}</span>
+                                      <p>{$caption.description}</p>
+                                    </span>
+                                  </div>
+                                </oggeh>
+                                <!-- end of :: album items for album label matches url $param2 -->
+                              </div>
+                            </section>

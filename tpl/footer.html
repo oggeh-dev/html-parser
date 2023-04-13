@@ -1,0 +1,120 @@
+                    <!-- Sidebar -->
+                    <div id="sidebar">
+                        <div class="inner">
+
+                            <!-- Search -->
+                                <section id="search" class="alt">
+                                    <form method="post" action="#">
+                                        <input type="text" name="keyword" placeholder="Search" />
+                                    </form>
+                                </section>
+
+                            <!-- Menu -->
+                                <nav id="menu">
+                                    <header class="major">
+                                        <h2>{$oggeh-phrase|menu}</h2>
+                                    </header>
+                                    <ul>
+                                        <!-- begin of :: app navigation -->
+                                        <oggeh method="get.pages" select="key,subject">
+                                            <li>
+                                                <a href="/{$lang}/" oggeh-match="home|active">{$oggeh-phrase|home}</a>
+                                            </li>
+                                            <li oggeh-repeat>
+                                                <!-- NOTE: using variables in property `oggeh-match` works only in inner html -->
+                                                <a href="/{$lang}/page/{$key}" oggeh-match="page/{$key}|active">{$subject}</a>
+                                            </li>
+                                            <li oggeh-nest>
+                                                <span class="opener">{$subject}</span>
+                                                <ul>
+                                                    <!-- NOTE: variable `$oggeh-clone-repeat` has a copy of the preceding element which has `oggeh-repeat` flag -->
+                                                    {$oggeh-clone-repeat}
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="/{$lang}/album" oggeh-match="album|active">{$oggeh-phrase|album}</a>
+                                            </li>
+                                            <li oggeh-match="news|active">
+                                                <a href="/{$lang}/news" oggeh-match="news|active">{$oggeh-phrase|all-news}</a>
+                                            </li>
+                                            <li oggeh-match="contact|active">
+                                                <a href="/{$lang}/contact" oggeh-match="contact|active">{$oggeh-phrase|contact-us}</a>
+                                            </li>
+                                        </oggeh>
+                                        <!-- end of :: app navigation -->
+                                    </ul>
+                                </nav>
+
+                            <!-- Section -->
+                                <section>
+                                    <!-- begin of :: page subject,header for page key `request-a-quote`  -->
+                                    <oggeh method="get.page" key="request-a-quote" select="subject,header,cover">
+                                        <header class="major">
+                                            <h2>{$subject}</h2>
+                                        </header>
+                                        <p>{$header}</p>
+                                        <ul class="actions">
+                                            <li><a href="/{$lang}/page/request-a-quote" class="button special">{$oggeh-phrase|submit}</a></li>
+                                        </ul>
+                                    </oggeh>
+                                    <!-- end of :: page subject,header for page key `request-a-quote`  -->
+                                </section>
+
+                            <!-- Section -->
+                                <section>
+                                    <header class="major">
+                                        <h2>{$oggeh-phrase|get-in-touch}</h2>
+                                    </header>
+                                    <ul class="contact">
+                                        <!-- begin of :: contact addresses -->
+                                        <oggeh method="get.locations" select="address">
+                                            <li class="fa-home" oggeh-repeat>{$address}</li>
+                                        </oggeh>
+                                        <!-- end of :: contact addresses -->
+                                    </ul>
+                                    <ul class="contact">
+                                        <!-- begin of :: contact addresses -->
+                                        <oggeh method="get.contacts" select="name,email">
+                                            <li class="fa-envelope-o" oggeh-repeat><a href="mailto:{$email}">{$name}</a></li>
+                                        </oggeh>
+                                        <!-- end of :: contact addresses -->
+                                    </ul>
+                                </section>
+
+                            <!-- Section -->
+                                <section>
+                                    <!-- begin of :: app languages -->
+                                    <oggeh method="get.app" select="languages">
+                                        <p class="lang" oggeh-repeat>
+                                            <a href="{$oggeh-switch|$}">
+                                                <span class="flag-icon flag-icon-{$flag}"></span>
+                                            </a>
+                                        </p>
+                                    </oggeh>
+                                    <!-- end of :: app languages -->
+                                </section>
+
+                            <!-- Footer -->
+                                <footer id="footer">
+                                    <p class="copyright">&copy; <!-- begin of :: app title --><oggeh method="get.app" select="title" /><!-- end of :: app title -->. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Power: <a href="http://dev.oggeh.com" rel="designer">OGGEH Developers</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                                </footer>
+
+                        </div>
+                    </div>
+
+            </div>
+
+        <!-- Scripts -->
+        <script src="//maps.google.com/maps/api/js?key=AIzaSyAr3-o4zl1K5IeZsAKImlqtGx9rNTGcWDA" type="text/javascript"></script>
+        <script src="assets/js/hmac-sha512.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/lightbox.min.js"></script>
+        <script src="assets/js/kctoggle.js"></script>
+        <script src="assets/js/datepicker.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js?v=0.1"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/main.js?v=3.6"></script>
+
+    </body>
+</html>

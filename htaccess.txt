@@ -1,0 +1,11 @@
+# Remember to enable `rewrite` settings at `index.php` before activating this file:
+# OGGEH::configure('rewrite', true);
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.php)$
+RewriteRule . index.php [L]
+</IfModule>

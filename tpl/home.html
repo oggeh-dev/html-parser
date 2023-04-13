@@ -1,0 +1,84 @@
+                                <!-- Slider -->
+                                <section id="slider" class="is-loading-0 is-loading-1 is-loading-2 fullscreen">
+                                    <div id="slider-wrapper">
+                                        <div id="thumbnails">
+                                            <!-- begin of :: active slider album  -->
+                                            <oggeh method="get.albums.schedule" select="caption,thumbnail,original" limit="2">
+                                                <article oggeh-repeat>
+                                                    <a class="thumbnail" href="{$original.url}" data-position="center center"><img src="{$thumbnail.url}" alt="{$caption.title}" /></a>
+                                                    <h2>{$caption.title}</h2>
+                                                    <p>{$caption.description}</p>
+                                                </article>
+                                            </oggeh>
+                                            <!-- end of :: active slider album  -->
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- Banner -->
+                                <section id="banner">
+                                    <!-- begin of :: page subject,header, and cover for page key `about-us`  -->
+                                    <oggeh method="get.page" key="about-us" select="subject,header,cover">
+                                        <div class="content">
+                                            <header>
+                                                <h1>{$subject}</h1>
+                                            </header>
+                                            <p>{$header}</p>
+                                            <ul class="actions">
+                                                <li><a href="/{$lang}/page/about-us" class="button big">{$oggeh-phrase|learn-more}</a></li>
+                                                <li><a href="/{$lang}/page/request-a-quote" class="button special big">{$oggeh-phrase|request-quote}</a></li>
+                                            </ul>
+                                        </div>
+                                        <span class="image fit">
+                                            <img src="{$cover.regular.url}" alt="{$subject}" />
+                                        </span>
+                                    </oggeh>
+                                    <!-- end of :: page subject,header, and cover for page key `about-us`  -->
+                                </section>
+
+                                <!-- Section -->
+                                <section>
+                                    <header class="major">
+                                        <h2>{$oggeh-phrase|latest-news}</h2>
+                                    </header>
+                                    <div class="features">
+                                        <!-- begin of :: latest news -->
+                                        <oggeh method="get.news" select="subject,header" limit="2">
+                                            <article oggeh-repeat>
+                                                <span class="icon fa-newspaper-o"></span>
+                                                <div class="content">
+                                                    <h3><a href="/{$lang}/news/{$timestamp}">{$subject}</a></h3>
+                                                    <p>{$header}</p>
+                                                    <ul class="actions">
+                                                        <li><a href="/{$lang}/news/{$key}" class="button">{$oggeh-phrase|learn-more}</a></li>
+                                                    </ul>
+                                                </div>
+                                            </article>
+                                        </oggeh>
+                                        <!-- end of :: latest news -->
+                                    </div>
+                                </section>
+
+                                <!-- Section -->
+                                <section>
+                                    <header class="major">
+                                        <h2>{$oggeh-phrase|highlights}</h2>
+                                    </header>
+                                    <div class="posts">
+                                        <!-- begin of :: only special pages  -->
+                                        <oggeh method="get.pages.special" select="subject,header,cover" limit="2">
+                                            <article oggeh-repeat>
+                                                <a href="/{$lang}/page/{$key}" class="image"><img src="{$cover.regular.url}" alt="" /></a>
+                                                <h3>{$subject}</h3>
+                                                <p>{$header}</p>
+                                                <ul class="actions">
+                                                    <li><a href="/{$lang}/page/{$key}" class="button">{$oggeh-phrase|learn-more}</a></li>
+                                                </ul>
+                                            </article>
+                                        </oggeh>
+                                        <!-- end of :: only special pages  -->
+                                    </div>
+                                </section>
+
+                        </div>
+                    </div>

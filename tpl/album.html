@@ -1,0 +1,45 @@
+                            <section>
+                              <header class="main">
+                                <h1>{$oggeh-phrase|album}</h1>
+                              </header>
+                              <hr class="major" />
+                              <div class="row">
+                                <!-- begin of :: all albums label and cover photo -->
+                                <oggeh method="get.albums" select="media,label,cover">
+                                  <!-- NOTE: always use unique block snippet parent tag (do not reuse in child tags) -->
+                                  <article class="4u 12u$(small)" media="photo" oggeh-album>
+                                    <a href="/{$lang}/album/photo/{$label}">
+                                      <span class="album image fit" data-alt="{$cover.regular.url}">
+                                        <img src="{$cover.regular.url}" alt="{$label}" />
+                                        <span>{$label}</span>
+                                      </span>
+                                    </a>
+                                  </article>
+                                  <article class="4u 12u$(small)" media="audio" oggeh-album>
+                                    <a href="/{$lang}/album/audio/{$label}">
+                                      <span class="album image fit" data-alt="{$cover.regular.url}">
+                                        <img src="{$cover.regular.url}" alt="{$label}" />
+                                        <span>{$label}</span>
+                                      </span>
+                                    </a>
+                                  </article>
+                                  <article class="4u 12u$(small)" media="video" oggeh-album>
+                                    <a href="/{$lang}/album/video/{$label}">
+                                      <span class="album image fit" data-alt="{$cover.regular.url}">
+                                        <img src="{$cover.regular.url}" alt="{$label}" />
+                                        <span>{$label}</span>
+                                      </span>
+                                    </a>
+                                  </article>
+                                  <article class="4u 12u$(small)" media="file" oggeh-album>
+                                    <a href="/{$lang}/album/file/{$label}">
+                                      <span class="album image fit" data-alt="{$cover.regular.url}">
+                                        <img src="{$cover.regular.url}" alt="{$label}" />
+                                        <span>{$label}</span>
+                                      </span>
+                                    </a>
+                                  </article>
+                                </oggeh>
+                                <!-- end of :: all albums label and cover photo -->
+                            </div>
+                          </section>
